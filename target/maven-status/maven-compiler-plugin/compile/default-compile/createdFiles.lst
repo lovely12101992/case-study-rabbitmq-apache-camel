@@ -1,0 +1,4 @@
+com\codeud\springcamelintegration\util\FileExchangeProcessorUtil.class
+com\codeud\springcamelintegration\routes\FileProcessorRouterBuilder.class
+com\codeud\springcamelintegration\processor\FileTransformProcessor.class
+com\codeud\springcamelintegration\SpringCamelIntegrationApplication.class

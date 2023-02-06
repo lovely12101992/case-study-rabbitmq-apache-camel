@@ -1,0 +1,9 @@
+-------------------------------------------------------------------------------
+Test set: com.codeud.springcamelintegration.SpringCamelRabbitmqIntegrationApplicationTests
+-------------------------------------------------------------------------------
+Tests run: 1, Failures: 0, Errors: 1, Skipped: 0, Time elapsed: 3.833 s <<< FAILURE! - in com.codeud.springcamelintegration.SpringCamelRabbitmqIntegrationApplicationTests
+contextLoads  Time elapsed: 0.007 s  <<< ERROR!
+java.lang.IllegalStateException: Failed to load ApplicationContext
+Caused by: org.apache.camel.FailedToCreateRouteException: Failed to create route csv-route at: >>> DoTry[[Log[csv-route], Unmarshal[org.apache.camel.model.dataformat.CsvDataFormat@793d09e], Bean[ref:FileTransformProcessor method:csvJavaTransformation], Marshal[org.apache.camel.model.dataformat.YAMLDataFormat@1fbd5e0], To[rabbitmq://localhost:5672/jsonExchange?queue=jsonQueue&routingKey=jsonRoutingKey&autoDelete=false], DoCatch[ [class java.lang.Exception] -> [Log[csv-route-error], process[Processor@0x32d22650], To[rabbitmq://localhost:5672/deadLetterExchange?queue=deadLetterQueue&routingKey=deadLetterRoutingKey]]], DoFinally[[Log[csv-route-finally], To[file:outputs?fileName=${header.fileName}-${header.currentTimeStamp}.yaml]]]]] <<< in route: Route(csv-route)[From[direct:csv] -> [DoTry[[Log[csv-route],... because of No bean could be found in the registry for: FileTransformProcessor
+Caused by: org.apache.camel.NoSuchBeanException: No bean could be found in the registry for: FileTransformProcessor
+
